@@ -1,3 +1,24 @@
 <div class="container">
-    <h2>Index page</h2>
+    <h2>Todos page</h2>
+
+    {{#if todos.lenght}}
+        <ul>
+            {{#each todos}}
+                <li class="todo">
+                    <labal>
+                        {{#if complited}}
+                        <input type="checkbox" checked>
+                        <span class="complited">{{title}}</span>
+                        {{else}}
+                        <input type="checkbox">
+                        <span>{{title}}</span>
+                        {{/if}}
+                        <button class="btn btn-small">Save</button>
+                    </labal>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No todos!</p>
+    {{/if}}
 </div>
